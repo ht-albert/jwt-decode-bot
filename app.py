@@ -53,12 +53,11 @@ def decode_jwt(tg_user):
 @bot.message_handler(commands=['start'])
 def calendar(mess):
     token = jwt.encode(payload={'message': 'Hello world'}, key='')
-    message = """Hello, i send your data:\n
-    YOU LINK: {host}{user}/ \n
-    Documentation: {doc}' \n
-    Example:\n{host}/{user}?jwt={jwt}
-    """.format(doc=config.bot_doc, host=config.host, user=mess.chat.id, jwt=token)
+    message = """Hello, i send your data:\nYOU LINK: {host}{user}/\nExample:\n{host}{user}?jwt={jwt}
+    """.format(host=config.host, user=mess.chat.id, jwt=token)
+    bot.send_message(mess.chat.id, 'Documentation:\n{}'.format(config.bot_doc))
     bot.send_message(mess.chat.id, message)
+
 
 
 if __name__ == '__main__':
