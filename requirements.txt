@@ -16,7 +16,7 @@ PyJWT==1.6.4
 PySocks==1.6.8
 pyTelegramBotAPI==3.6.6
 PyYAML==3.13
-requests==2.19.1
+requests>=2.20.0
 six==1.11.0
 urllib3==1.23
 Werkzeug==0.14.1
