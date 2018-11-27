@@ -59,7 +59,6 @@ def calendar(mess):
     bot.send_message(mess.chat.id, message)
 
 
-
 if __name__ == '__main__':
     if config.is_local:
         bot.polling()
