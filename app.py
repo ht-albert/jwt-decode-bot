@@ -35,6 +35,8 @@ def webhook():
 @app.route('/<int:tg_user>/', methods=['GET'])
 def decode_jwt(tg_user):
     token = request.args.get('jwt')
+    if not token:
+        return abort(400, "Missing param jwt.")
     try:
         decode_info = jwt.decode(token, verify=False)
     except Exception:
@@ -50,7 +52,8 @@ def decode_jwt(tg_user):
 
 @bot.message_handler(commands=['start'])
 def calendar(mess):
-    bot.send_message(mess.chat.id, 'You link: {}{}/'.format(config.host, mess.chat.id))
+    bot.send_message(mess.chat.id, 'Please read documentation:\n {}'.format(config.bot_doc))
+    bot.send_message(mess.chat.id, 'You link for jwt decode:\n {}{}/'.format(config.host, mess.chat.id))
 
 
 if __name__ == '__main__':
