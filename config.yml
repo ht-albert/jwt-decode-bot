@@ -1,0 +1,9 @@
+bot_token: ''
+bot_doc: 'https://github.com/ht-albert/jwt-decode-bot'
+
+port: 5000
+host: 'localhost'
+proxy: 'socks5://tmp-alfa:QBnsXbyy@ru.socksy.seriyps.ru:7777'
+
+
+
